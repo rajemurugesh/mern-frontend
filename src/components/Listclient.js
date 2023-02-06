@@ -19,7 +19,7 @@ class Listclient extends Component {
     }
 }
     getClients = () => {
-        axios.get("http://localhost:5000/")
+        axios.get("https://crudapp-sc17.onrender.com/")
         .then(res=>{
             console.log(res);
             this.setState({clients:res.data});
@@ -30,7 +30,7 @@ class Listclient extends Component {
         this.getClients();
     }
     handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/clients/${id}`)
+        axios.delete(`https://crudapp-sc17.onrender.com/clients/${id}`)
         .then(res=>{
             console.log(res);
             window.location = "/";
@@ -42,7 +42,7 @@ class Listclient extends Component {
     }
 
     handleModalUpdate=()=>{
-        axios.put(`http://localhost:5000/clients/${this.state.uid}`,{name:this.state.uname,nationality:this.state.unationality,passport_no:this.state.upassport_no,emirates_id_no:this.state.uemirates_id_no,mobil_no:this.state.umobil_no,email:this.state.uemail})
+        axios.put(`https://crudapp-sc17.onrender.com/clients/${this.state.uid}`,{name:this.state.uname,nationality:this.state.unationality,passport_no:this.state.upassport_no,emirates_id_no:this.state.uemirates_id_no,mobil_no:this.state.umobil_no,email:this.state.uemail})
         .then(res=>{
             console.log(res);
             this.setState({uname:'',unationality:'',upassport_no:'',uemirates_id_no:'',umobil_no:'',uemail:''})

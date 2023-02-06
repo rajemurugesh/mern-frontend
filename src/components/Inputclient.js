@@ -35,7 +35,7 @@ class Inputclient extends Component {
         ))
 
         {
-            axios.post("http://localhost:5000/clients", this.state)
+            axios.post("https://crudapp-sc17.onrender.com/clients", this.state)
             .then(res=>{
                 console.log(res);
                 this.setState({name:'',nationality:'',passport_no:'',emirates_id_no:'',mobil_no:'',email:'' })
